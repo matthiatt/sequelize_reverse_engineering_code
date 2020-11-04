@@ -4,7 +4,6 @@ $(document).ready(function() {
   var emailInput = $("input#email-input"); // Telling ajax to call to the input tag with the id="email-input"
   var passwordInput = $("input#password-input"); // Telling ajax to call to the input tag with the id="password-input"
 
-
   // Calling the variable 'signUpForm' (line 3) connected to the 'on()' method, which has a function with the perameters '(event)'.
   // Next, call the perameter that's nested in the function.  Then, use the 'prevantDefault()' method.
   // This is becuase if the event isn't handled in the right fashion or rightful order, then its default action shouldn't be taken as it usually would be handeled.
