@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/node-js-fs-readdirsync-method/
+
 // The purpose of using the 'use strict' command is to have a key value that shows which code should be executed using specifically "strict mode".
 // With strict mode you can not use undeclared variables.
 'use strict';
@@ -16,8 +18,12 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+} // If false(lines 15-17) then I am guessing this is telling the server to sequalize the database to configure the given perameters listed.
 
+
+// Calling the 'fs', which is declaring a filesystem module.  It is calling a method called 'readdirSync()'.
+// "The fs.readdirSync() method is used to synchronously read the contents of a given directory. The method returns an array with all the file names or objects in the directory. The options argument can be used to change the format in which the files are returned from the method."
+// In this case, the 'readdirSync()' method has a perameter of '__dirname' which is telling it that with the directory name, read it in an array.
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
