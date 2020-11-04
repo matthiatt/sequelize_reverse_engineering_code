@@ -3,20 +3,17 @@
 // Calling the installed modules that have been installed, that I want in my server connection.
 var express = require("express");
 var session = require("express-session");
-// Require the passport module, and the file that the module is directly written to.
-var passport = require("./config/passport");
+var passport = require("./config/passport"); // Require the passport module, and the file that the module is directly written to.
 
 // Sets the port and the correct models to connect.
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
-// Creating express app and configuring middleware needed for authentication
-var app = express();
+var app = express(); // Creating express app and configuring middleware needed for authentication
 app.use(express.urlencoded({ extended: true })); // Needed to have the server connect. The 'urlencoded()' method - this encodes the information with UTF-8.
 app.use(express.json());
 app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true })); // We need to use sessions to keep track of our user's login status
 app.use(passport.initialize());
 app.use(passport.session());
 
