@@ -28,9 +28,9 @@ fs
   .readdirSync(__dirname)
   .filter(function(file) {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
+  }) // I am confused on that the 'indexOf('.')' method is calling. I understand the '!==0'.  This is simpley an operator which is saying return true.
   .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
+    var model = sequelize['import'](path.join(__dirname, file)); // Calling the sequalize variable (line 18 and 20? or one or the other). which is telling the import to be an array.  Which it needs to be becuase, if it's SQL data, then it's an object which needs to be read by an array.
     db[model.name] = model;
   });
 // Calling an object constructor that's linked with a method, 'keys()', which has a perameter '(db)'.
