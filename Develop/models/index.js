@@ -33,13 +33,15 @@ fs
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
-
+// Calling an object constructor that's linked with a method, 'keys()', which has a perameter '(db)'.
+// I am thinking that this object constructor is a primary key from the db for each 'modelName' that's created?
+// So in other words, it gives a new unique Id for each member signed up?
 Object.keys(db).forEach(function(modelName) {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
-
+// One is called for the constructor 'Seqelize' and one is called for just the variable name (line 33) with a lower case 's'.
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
