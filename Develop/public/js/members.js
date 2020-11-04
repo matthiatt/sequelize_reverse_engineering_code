@@ -5,3 +5,4 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
 });
+// Didn't think we had to explain things here. since not much is needed to be said to much about it, other than what's already been added to this.

@@ -13,8 +13,8 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members"); // Redirects access to members to this area.
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
+    res.sendFile(path.join(__dirname, "../public/signup.html")); // Response is sending the 'sendFile()' method.
+  }); // Then setting the path to join a directory name, followed by the location within a string.
 
   // Telling the app perameter to get the login page.
   app.get("/login", function(req, res) {
@@ -22,7 +22,8 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members"); // Redirect to members page.
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html")); // Response is sending the 'sendFile()' method.
+    // Then setting the path to join a directory name, followed by the location within a string.
   });
 
   // Telling the server to get the members page that's been authenticated with the users information.  Then to send the file that was prompted with a response.
